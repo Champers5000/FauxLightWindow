@@ -1,3 +1,5 @@
 # ignore all KiCAD backups
 *backups/
-
+*.gbr
+*.drl
+*gbrjob
