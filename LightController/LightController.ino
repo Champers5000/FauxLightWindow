@@ -5,6 +5,8 @@
 
 #include "inc/Drivers/StatusLED.h"
 #include "inc/Application/FaultState.h"
+#include "inc/Application/XYZ1931.h"
+
 int main(void) {
   StatusLEDPWMInit();  
 
