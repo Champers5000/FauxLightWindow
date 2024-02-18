@@ -1,6 +1,8 @@
-# ignore all KiCAD backups
 *.gbr
 *.drl
 *.gbrjob
 
+# ignore all KiCAD backups
 *backups/
+*cache*
+*lib-table
