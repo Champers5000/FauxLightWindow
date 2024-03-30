@@ -1,6 +1,6 @@
 #ifndef StatusLEDDriver
 #define StatusLEDDriver
-void StatusLEDGPIOInit();
+void StatusLEDInit();
 
 void StatusLEDOn();
 

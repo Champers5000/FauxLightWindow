@@ -3,7 +3,7 @@
 #include <util/delay.h>
 
 void FaultState(uint8_t type, uint8_t number){
-  StatusLEDGPIOInit();
+  StatusLEDInit();
   while(1){
     for(uint8_t i=0; i<type; ++i){
       StatusLEDOn();

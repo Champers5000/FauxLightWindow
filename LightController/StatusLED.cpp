@@ -1,40 +1,65 @@
 #include "inc/Drivers/StatusLED.h"
 #include "inc/Application/FaultState.h"
 #include <avr/io.h>
+//#include<avr/ioavr32dd20.h>
+//home/bob/.arduino15/packages/DxCore/tools/avr-gcc/7.3.0-atmel3.6.1-azduino7b1/avr/include/avr/ioavr32dd20.h
+#define StatusLED (1 << 4)//status led on pa4
+//Timer A WO4
+//Also TCD0 WOA
+void StatusLEDInit(){
+  PORTMUX.TCDROUTEA = 0;//portmux to tcd0 woa out on pa4
+  PORTA.DIRSET |= StatusLED;
 
-#define StatusLED (1 << 4)//status led on pb4
-
-void StatusLEDGPIOInit(){
-    TCCR1A &= 0b11001111; //disable OC in order to give led control back to gpio
-    DDRB |= StatusLED;
+  TCD0.CTRLA |= 0b01100000; //set clk source to system clock
+  TCD0.CTRLB = 0; //oneramp mode
+  //optional configure reg for functionality
+  TCD0.CMPASET = 0; //turn on when value is 0
+  TCD0.CMPACLR = 0; //turn off when value is 0
+  TCD0.CMPBCLR = 0xFFF; //output compareclearb sets the period 
+  //optional double buffered registers init here
+  TCD0.FAULTCTRL |= 0b00010000; //enable output on WOA on pin PA4
+  while(TCD0.STATUS & 0b0001){
+    //wait until status register says ready to be enabled
+  }
+  TCD0.CTRLA |= 0b0001; //enable the timer  
 }
 
 void StatusLEDOn(){
-  PORTB |= StatusLED;
+  TCD0.CMPACLR = 0xFFF; //max duty cycle
+  //sync the double buffered register
+
+  while(TCD0.STATUS & 0b0010){
+    //wait until status register is ready for command
+  }
+  TCD0.CTRLE |= 0b0010;
 }
 
 void StatusLEDOff(){
-  PORTB &= ~StatusLED;
+  TCD0.CMPACLR = 0; //0 duty cycle
+  //sync the double buffered register
+
+  while(TCD0.STATUS & 0b0010){
+    //wait until status register is ready for command
+  }
+  TCD0.CTRLE |= 0b0010;
 }
 
 void StatusLEDToggle(){
-  PORTB ^= StatusLED;
-}
-
-void StatusLEDPWMInit(){
-  DDRB |= StatusLED;
-  TCCR1A = 0b00100011;  // phase correct PWM mode (10bit), clearing oc1B on compare match
-  TCCR1B = 0b00000001;  //no prescaler clock
+  return; //todo
 }
 
 void setStatusLEDDuty(short occValue) {
-  ///0x03FF is the max value
-  if (!(occValue >> 10)){
-    OCR1B = occValue;
-  }
+  if ((occValue >> 12)){
+    // if number has something greater than 12 bits, we come here and throw error
+    FaultState(1,2);  }
   else
   {
-    // if number has something greater than 10 bits, we come here and throw error
-    FaultState(1,2);
+    TCD0.CMPACLR = occValue; //0 duty cycle
+    //sync the double buffered register
+
+    while(TCD0.STATUS & 0b0010){
+      //wait until status register is ready for command
+    }
+    TCD0.CTRLE |= 0b0010;
   }
 }
