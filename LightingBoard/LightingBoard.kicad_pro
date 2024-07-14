@@ -498,6 +498,7 @@
   },
   "schematic": {
     "annotate_start_num": 0,
+    "bom_export_filename": "",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
       "field_delimiter": ",",
@@ -598,6 +599,18 @@
     [
       "3512c088-bc62-4a72-803d-5db96724f2eb",
       "Root"
+    ],
+    [
+      "2fd83a2d-3631-4876-8a5b-ae2e5dcaeadc",
+      "CC_Buck0"
+    ],
+    [
+      "616cf8b1-6c82-45a7-abfb-2ce6ace25486",
+      "CC_Buck1"
+    ],
+    [
+      "f2561773-1607-40a8-a01d-4624afcc57fa",
+      "CC_Buck2"
     ]
   ],
   "text_variables": {}
