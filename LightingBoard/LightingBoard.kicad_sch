@@ -732,108 +732,6 @@
 				)
 			)
 		)
-		(symbol "Connector:TestPoint"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "CustomSymbols:AVR32DD20-E_REB"
 			(pin_names
 				(offset 0.254)
@@ -3013,6 +2911,16 @@
 	)
 	(wire
 		(pts
+			(xy 112.395 84.455) (xy 112.395 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59f47849-79ec-4556-b96d-6a3bd1defef2")
+	)
+	(wire
+		(pts
 			(xy 88.265 22.86) (xy 86.36 22.86)
 		)
 		(stroke
@@ -3453,6 +3361,16 @@
 	)
 	(wire
 		(pts
+			(xy 112.395 130.81) (xy 135.89 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cbc6f929-0598-42d3-b89c-c956b1b8b629")
+	)
+	(wire
+		(pts
 			(xy 81.915 142.748) (xy 81.915 142.24)
 		)
 		(stroke
@@ -3660,6 +3578,17 @@
 			(justify left bottom)
 		)
 		(uuid "4b9df293-d145-4d74-8b93-ef0bc5813532")
+	)
+	(label "Enable2"
+		(at 135.89 134.62 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "50ecb5fc-6243-4bf4-9561-b4ca8f0642a4")
 	)
 	(label "UART_TX"
 		(at 113.665 158.115 180)
@@ -3913,7 +3842,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00f86a30-4a15-4bb7-bde8-ec389e18aaad")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR04"
 			(at 34.29 36.195 0)
 			(effects
 				(font
@@ -3963,7 +3892,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR08")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -3979,7 +3908,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0a947863-b70a-40bc-838c-9f4595d23e39")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR08"
 			(at 66.675 36.83 0)
 			(effects
 				(font
@@ -4029,7 +3958,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR06")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -4124,7 +4053,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0da83d05-f6e1-474f-aa13-bdef7458f5df")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR09"
 			(at 69.85 66.675 0)
 			(effects
 				(font
@@ -4174,7 +4103,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR010")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -4269,7 +4198,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1206c61a-55a5-488b-9636-38c084b25006")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR023"
 			(at 113.665 170.815 0)
 			(effects
 				(font
@@ -4319,7 +4248,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR049")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -4335,7 +4264,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "13d4f810-ce64-4cdd-a5ed-0ad65a43eb0c")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR03"
 			(at 34.29 22.86 0)
 			(effects
 				(font
@@ -4385,7 +4314,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR05")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -4400,7 +4329,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "161777dc-560b-4192-a77a-7b00382f7c0f")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR025"
 			(at 117.475 194.945 0)
 			(effects
 				(font
@@ -4450,7 +4379,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR046")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -4465,7 +4394,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a7230f2-5f47-4e85-a209-51d43a6b12e4")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR027"
 			(at 143.764 179.832 0)
 			(effects
 				(font
@@ -4515,7 +4444,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR059")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -4531,7 +4460,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1da4519c-2fc9-4840-96d0-838c0074472b")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR017"
 			(at 88.265 38.1 0)
 			(effects
 				(font
@@ -4581,7 +4510,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR09")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -4596,7 +4525,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "236e1d60-ad31-4c94-82ea-16c9e67a27f3")
-		(property "Reference" "R21"
+		(property "Reference" "R6"
 			(at 129.032 160.147 90)
 			(effects
 				(font
@@ -4657,7 +4586,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R21")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -4673,7 +4602,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "246dcb8d-21e2-4349-9b16-7b5fef3c21bf")
-		(property "Reference" "J7"
+		(property "Reference" "J3"
 			(at 120.65 140.335 0)
 			(effects
 				(font
@@ -4742,7 +4671,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "J7")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -4758,7 +4687,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "34283435-e191-4cb9-bfd9-e4c3466ad50e")
-		(property "Reference" "J4"
+		(property "Reference" "J2"
 			(at 111.125 182.88 0)
 			(effects
 				(font
@@ -4827,7 +4756,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "J4")
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -4843,7 +4772,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3dacb4be-594a-4f84-b571-0b376535420c")
-		(property "Reference" "J5"
+		(property "Reference" "J4"
 			(at 120.65 158.115 0)
 			(effects
 				(font
@@ -4861,7 +4790,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_JST:JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
 			(at 118.745 160.655 0)
 			(effects
 				(font
@@ -4912,7 +4841,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "J5")
+					(reference "J4")
 					(unit 1)
 				)
 			)
@@ -4928,7 +4857,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3f735924-a5d9-433c-b660-a8b6fdd9fe4d")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR015"
 			(at 81.915 151.13 0)
 			(effects
 				(font
@@ -4978,7 +4907,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR086")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -4994,7 +4923,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "46ee913d-fdd1-4de0-a15b-ba99c087324a")
-		(property "Reference" "C5"
+		(property "Reference" "C10"
 			(at 91.44 25.4063 0)
 			(effects
 				(font
@@ -5057,7 +4986,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C5")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -5072,7 +5001,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "472cc784-d16c-4b56-a64c-7095e13edc67")
-		(property "Reference" "C18"
+		(property "Reference" "C9"
 			(at 83.82 138.43 0)
 			(effects
 				(font
@@ -5135,7 +5064,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C18")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -5151,7 +5080,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4ac6f856-6d1e-4c15-8853-5c7ff3e4e25b")
-		(property "Reference" "#FLG01"
+		(property "Reference" "#FLG02"
 			(at 41.275 20.955 0)
 			(effects
 				(font
@@ -5201,7 +5130,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#FLG01")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -5217,7 +5146,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4ae9e206-4ecb-446f-b2eb-07ffcb461028")
-		(property "Reference" "C4"
+		(property "Reference" "C7"
 			(at 69.85 25.4063 0)
 			(effects
 				(font
@@ -5280,7 +5209,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C4")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -5295,7 +5224,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59e58d11-db2f-4b05-af0b-0a951b05f415")
-		(property "Reference" "#PWR082"
+		(property "Reference" "#PWR022"
 			(at 113.665 153.035 0)
 			(effects
 				(font
@@ -5345,7 +5274,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR082")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -5360,7 +5289,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67fe2354-c470-4fb0-bcbb-2094a349c16e")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR026"
 			(at 134.112 179.832 0)
 			(effects
 				(font
@@ -5410,7 +5339,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR050")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -5426,7 +5355,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "68c5492b-07e1-4ffb-8ebd-9bc7626527b3")
-		(property "Reference" "C25"
+		(property "Reference" "C1"
 			(at 31.115 173.3613 0)
 			(effects
 				(font
@@ -5480,7 +5409,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C25")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -5572,7 +5501,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6f7ce379-88d1-4a93-b2fc-df3b273eab89")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR010"
 			(at 70.485 183.515 0)
 			(effects
 				(font
@@ -5622,7 +5551,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR058")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -5638,7 +5567,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "70fa4b2b-f251-4e5e-9668-04b907e46f8a")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR02"
 			(at 28.575 183.515 0)
 			(effects
 				(font
@@ -5688,7 +5617,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR048")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -5704,7 +5633,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "71a8879d-5fa3-4d40-a174-4b4ac543510a")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR013"
 			(at 78.74 36.83 0)
 			(effects
 				(font
@@ -5754,7 +5683,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR07")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -5770,7 +5699,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7210b892-3911-4cdd-b6e1-e62be03852d2")
-		(property "Reference" "#PWR079"
+		(property "Reference" "#PWR019"
 			(at 102.235 23.495 0)
 			(effects
 				(font
@@ -5820,7 +5749,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR079")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -5836,7 +5765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "76796db3-8f97-4f2a-b9be-6eae61052294")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR05"
 			(at 48.895 80.01 0)
 			(effects
 				(font
@@ -5886,7 +5815,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR01")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -5902,7 +5831,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "775b9803-4f63-4927-bda6-5aaa68476469")
-		(property "Reference" "#PWR028"
+		(property "Reference" "#PWR011"
 			(at 74.93 88.265 0)
 			(effects
 				(font
@@ -5952,7 +5881,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR028")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -5968,7 +5897,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7ccd3cf5-53aa-4baf-9176-abdeef9de3b1")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR018"
 			(at 97.155 95.885 0)
 			(effects
 				(font
@@ -6018,7 +5947,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR025")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -6034,7 +5963,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7dac50f5-8e35-4236-9887-80c5159776ed")
-		(property "Reference" "R1"
+		(property "Reference" "R3"
 			(at 104.775 24.765 0)
 			(effects
 				(font
@@ -6097,74 +6026,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 112.395 84.455 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "828ee67b-966d-4e00-97a9-634c4429d4f3")
-		(property "Reference" "TP1"
-			(at 114.3 86.4869 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 114.3 89.0269 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 107.315 84.455 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 107.315 84.455 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 112.395 84.455 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7a3830dc-4ff8-4bbd-9e4c-40d5566b9128")
-		)
-		(instances
-			(project ""
-				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "TP1")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -6179,7 +6041,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86751850-0169-4704-823a-e0f945d3a4fd")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR024"
 			(at 117.475 180.34 0)
 			(effects
 				(font
@@ -6229,7 +6091,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR038")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -6245,7 +6107,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8795da06-c019-45b9-b201-42fea674f979")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR06"
 			(at 59.69 80.01 0)
 			(effects
 				(font
@@ -6295,7 +6157,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR017")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -6311,7 +6173,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "99db24d5-bb46-4954-93eb-21228ce898f5")
-		(property "Reference" "C2"
+		(property "Reference" "C3"
 			(at 50.165 24.1363 0)
 			(effects
 				(font
@@ -6374,7 +6236,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C2")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -6390,7 +6252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b2c3250-0385-439d-beaa-75f6af72ec51")
-		(property "Reference" "R34"
+		(property "Reference" "R1"
 			(at 72.39 69.8499 0)
 			(effects
 				(font
@@ -6453,7 +6315,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R34")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -6469,7 +6331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9de5af11-1e14-4ec5-9d60-152f284a14f3")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 38.735 29.845 0)
 			(effects
 				(font
@@ -6519,7 +6381,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -6534,7 +6396,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e088b9b-b901-4674-9302-246b608ffe36")
-		(property "Reference" "C12"
+		(property "Reference" "C4"
 			(at 52.07 69.8563 0)
 			(effects
 				(font
@@ -6597,7 +6459,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C12")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -6613,7 +6475,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1a74cb8-e110-4e04-9cec-dcb45bafb2a1")
-		(property "Reference" "U5"
+		(property "Reference" "U1"
 			(at 50.165 109.855 0)
 			(effects
 				(font
@@ -6724,7 +6586,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "U5")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -6739,7 +6601,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a44a18af-f8ac-4fd5-847b-dcc66a05a46b")
-		(property "Reference" "R22"
+		(property "Reference" "R7"
 			(at 138.684 160.147 90)
 			(effects
 				(font
@@ -6800,7 +6662,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R22")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -6815,7 +6677,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a5f6a8b1-30ad-408f-8609-2a357f870a99")
-		(property "Reference" "R20"
+		(property "Reference" "R5"
 			(at 121.92 190.5 90)
 			(effects
 				(font
@@ -6876,7 +6738,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R20")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -6892,7 +6754,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7cb00e8-8293-4d84-9534-d0869f131830")
-		(property "Reference" "C3"
+		(property "Reference" "C5"
 			(at 58.42 24.1363 0)
 			(effects
 				(font
@@ -6955,7 +6817,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C3")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -6970,7 +6832,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a865bd81-4c24-4f01-936e-aaac3e0dd6bd")
-		(property "Reference" "R11"
+		(property "Reference" "R2"
 			(at 85.725 133.35 0)
 			(effects
 				(font
@@ -7033,7 +6895,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R11")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -7049,7 +6911,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0d36a06-9ce3-4b3c-aa76-aeb4dee92e3b")
-		(property "Reference" "U14"
+		(property "Reference" "U3"
 			(at 99.3491 69.85 0)
 			(effects
 				(font
@@ -7127,7 +6989,7 @@
 		(instances
 			(project ""
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "U14")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -7143,7 +7005,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf10ca48-3784-4c64-b1be-80edb54234b2")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR01"
 			(at 19.177 140.97 0)
 			(effects
 				(font
@@ -7193,7 +7055,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR083")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
@@ -7288,7 +7150,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cfc4f753-d779-4f47-9d24-d8274b8ddb2c")
-		(property "Reference" "#PWR084"
+		(property "Reference" "#PWR012"
 			(at 76.327 143.51 0)
 			(effects
 				(font
@@ -7338,7 +7200,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR084")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -7354,7 +7216,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4213425-93b7-476f-9b52-8af5f2cff60d")
-		(property "Reference" "R2"
+		(property "Reference" "R4"
 			(at 113.03 24.765 0)
 			(effects
 				(font
@@ -7417,7 +7279,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "R2")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -7433,7 +7295,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4e85ec0-f633-45f2-b414-3630b7bb92b3")
-		(property "Reference" "C13"
+		(property "Reference" "C6"
 			(at 62.865 69.8563 0)
 			(effects
 				(font
@@ -7497,7 +7359,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C13")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -7513,7 +7375,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "db8d1759-96a9-481b-9fb0-eacb5c76b428")
-		(property "Reference" "C26"
+		(property "Reference" "C8"
 			(at 73.025 173.3486 0)
 			(effects
 				(font
@@ -7567,7 +7429,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C26")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -7583,7 +7445,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e702ab74-94f4-4075-bfe6-5eb96097a3f6")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR07"
 			(at 66.675 23.495 0)
 			(effects
 				(font
@@ -7633,7 +7495,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR02")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -7649,7 +7511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e9fa5486-fbd1-4c2c-8083-b974a3839fbb")
-		(property "Reference" "#PWR085"
+		(property "Reference" "#PWR014"
 			(at 80.137 127.508 0)
 			(effects
 				(font
@@ -7699,7 +7561,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR085")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -7715,7 +7577,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed504e68-36bc-4f64-9aca-53e6b87016c4")
-		(property "Reference" "U10"
+		(property "Reference" "U2"
 			(at 78.74 16.51 0)
 			(effects
 				(font
@@ -7770,7 +7632,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "U10")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -7786,7 +7648,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef8f5d55-946d-41f4-9cb4-6935b58ad3e8")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR021"
 			(at 102.235 163.195 0)
 			(effects
 				(font
@@ -7836,7 +7698,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR047")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -7852,7 +7714,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f23b65d6-c891-4fdc-9744-9ba6ab63112f")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR016"
 			(at 88.265 23.495 0)
 			(effects
 				(font
@@ -7902,7 +7764,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR03")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -7918,7 +7780,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f63e1f10-c2de-4d4b-93b3-0e80d69b23af")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR020"
 			(at 102.235 145.415 0)
 			(effects
 				(font
@@ -7968,7 +7830,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "#PWR056")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -7984,7 +7846,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f691adb9-666e-42c8-925d-e76fa9ec110b")
-		(property "Reference" "C1"
+		(property "Reference" "C2"
 			(at 41.91 24.1362 0)
 			(effects
 				(font
@@ -8047,7 +7909,7 @@
 		(instances
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
-					(reference "C1")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -8107,6 +7969,64 @@
 			(project "LightingBoard"
 				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 135.89 126.365)
+		(size 27.305 13.335)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4cf2bc5f-97c1-43eb-bf25-c1748315c5f1")
+		(property "Sheetname" "CC_Buck3"
+			(at 135.89 125.6534 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CC_Buck.kicad_sch"
+			(at 135.89 140.2846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "DAC_IN" input
+			(at 135.89 130.81 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "c618f28a-a720-4ef0-bc59-9c85a300d880")
+		)
+		(pin "Enable" input
+			(at 135.89 134.62 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "94c5100f-0fd0-462b-a2fd-460527de61ec")
+		)
+		(instances
+			(project "LightingBoard"
+				(path "/3512c088-bc62-4a72-803d-5db96724f2eb"
+					(page "5")
 				)
 			)
 		)
