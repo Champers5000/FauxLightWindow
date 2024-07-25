@@ -2,6 +2,7 @@
 *.drl
 *.gbrjob
 *.bak
+*.log
 
 # ignore all KiCAD backups
 *backups/
