@@ -6690,7 +6690,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "470"
 			(at 121.92 185.42 90)
 			(effects
 				(font

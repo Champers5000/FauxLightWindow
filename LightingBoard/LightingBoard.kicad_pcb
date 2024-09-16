@@ -1910,7 +1910,7 @@
 				)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "100nF"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "fe35607d-c17d-451d-975a-1a098ada4166")
@@ -2362,7 +2362,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7K"
+		(property "Value" "470"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "65696b8f-0525-460f-bb45-839002b30e8f")
@@ -10423,7 +10423,7 @@
 				)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "100nF"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "02d6919e-df9a-4dff-9dba-4e72a1fdd2bd")
@@ -20004,7 +20004,7 @@
 				)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "100nF"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "bbaa6b33-dcb6-43aa-af64-4af77fd41601")
@@ -22943,7 +22943,7 @@
 				)
 			)
 		)
-		(property "Value" "10nF"
+		(property "Value" "100nF"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(uuid "761254bf-0fcf-4c41-ae3b-1de3a8248e04")
