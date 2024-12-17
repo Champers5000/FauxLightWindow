@@ -1,49 +1,91 @@
-#include <stdint.h>
+#include "inc/Drivers/I2C_DAC.h"
 
-#define DAC1
-#define DAC2
-#define I2C_IS_BUSY()             (internal_status.busy || !(TWI0.MSTATUS & TWI_BUSSTATE_IDLE_gc))?true:false
-//I2C on pins PA2 and PA3
-
-uint8_t calcBaudRate(int F_SCL, float T_RISE){
-  return (uint8_t) ((((((float)(F_CPU) / (float)(F_SCL))) - 10 - ((float)(F_CPU) * (T_RISE) / 1000000))) / 2);
+MCP4728::MCP4728() : PDbits(0) {
+    I2CInit();
+    initDAC();
 }
 
-void DACinit(){
-  //enable pullups
-  PORTA.PIN2CTRL |= PORT_PULLUPEN_bm;
-  PORTA.PIN3CTRL |= PORT_PULLUPEN_bm;
-
-  TWI0.CTRLA = 0;
-  TWI0.MBAUD = calcBaudRate(100000, 0.1);
-  TWI0.MCTRLA = 0x01;
-  TWI0.MSTATUS= 0; //disable everything as we setup i2c
-  TWI0.MADDR = 0; //host address is 0
-  TWI0.MCTRLB = 0;
-  TWI0.MDATA = 0;
-
-  TWI0.MCTRLB  |= 0b1000; //set data to be flushed onto the bus as soon as MDATA is written to
-  TWI0.MSTATUS |= 0b0001; //set the bus to idle for now
+void MCP4728::I2CInit() {
+    Wire.swap(1);
+    Wire.begin();
 }
 
-bool I2C_Write(uint8_t address, uint8_t *pData, size_t dataLength){
-  if(I2C_IS_BUSY()){
-    return false;
-  }
-  TWI0.MADDR = (address << 1) 
-  //wait for rx acknowledge and write interrupt flag
-  while( !((TWI0.MSTATUS & 0b00010000 == 0) && (TWI0.MSTATUS & 0b01100000 == 0b01100000)) ){
-    //when rxack = 0, WIF = 1, and CLKHOLD = 1, we are ready to send more data
-  }
-  for(i=0; i<dataLength; ++i){
-    TWI0.MDATA = pData[i];
-    while(TWI0.MSTATUS & 0b00010000){
-      if(TWI0.MSTATUS & 0b00001000) //arblost flag
-      {
-        return false;
-      }
+uint16_t MCP4728::brightnessToDac(float brightness)  { 
+    return (uint16_t)(4090- brightness * 4090); 
+}
+
+void MCP4728::I2CSend(uint8_t* dataArr, uint8_t len) {
+    Wire.beginTransmission(I2C_ADDR);
+    for(uint8_t i = 0; i < len; ++i) {
+        Wire.write(dataArr[i]);
     }
-  }
-  TWI0.MCTRLB |= 0x03; // stop bit
+    Wire.endTransmission(I2C_ADDR);
+}
 
+void MCP4728::setAllChannels(uint16_t DACVals[4]) {
+    for(uint8_t i = 0; i < 4; ++i) {
+        uint8_t PDbit = (PDbits & (1 << i)) ? (0b00110000) : 0;
+        I2CWriteBuffer[i*2] = PDbit | ((DACVals[i] >> 8) & 0b00001111);
+        I2CWriteBuffer[i*2 + 1] = DACVals[i] & 0xFF;
+    }
+    I2CSend(I2CWriteBuffer, 8);
+}
+
+void MCP4728::setAllChannelBrightness(float brightnesses[4]) {
+    for(uint8_t i = 0; i < 4; ++i) {
+        uint8_t PDbit = (PDbits & (1 << i)) ? (0b00110000) : 0;
+        I2CWriteBuffer[i*2] = PDbit | ((brightnessToDac(brightnesses[i]) >> 8) & 0b00001111);
+        I2CWriteBuffer[i*2 + 1] = brightnessToDac(brightnesses[i]) & 0xFF;
+    }
+    I2CSend(I2CWriteBuffer, 8);
+}
+
+void MCP4728::setChannel(uint8_t channel, uint16_t DACVal) {
+    uint8_t PDbit = (PDbits & (1 << channel)) ? (0b01100000) : 0;
+    I2CWriteBuffer[0] = 0b01000000 | (channel << 1);
+    I2CWriteBuffer[1] = 0b10010000 | ((DACVal >> 8) & 0x0F) | PDbit;
+    I2CWriteBuffer[2] = DACVal & 0xFF;
+    I2CSend(I2CWriteBuffer, 3);
+}
+
+void MCP4728::writePDbitsToDAC() {
+    I2CWriteBuffer[0] = 0b10100000;
+    I2CWriteBuffer[1] = 0;
+    I2CWriteBuffer[0] |= (PDbits & 0b0001) ? 0b00001100 : 0;
+    I2CWriteBuffer[0] |= (PDbits & 0b0010) ? 0b00000011 : 0;
+    I2CWriteBuffer[1] |= (PDbits & 0b0100) ? 0b11000000 : 0;
+    I2CWriteBuffer[1] |= (PDbits & 0b1000) ? 0b00110000 : 0;
+    I2CSend(I2CWriteBuffer, 2);
+}
+
+void MCP4728::powerDownChannel(uint8_t chan) {
+    PDbits |= 1 << chan;
+    writePDbitsToDAC();
+}
+
+void MCP4728::powerUpChannel(uint8_t chan) {
+    PDbits &= ~(1 << chan);
+}
+
+void MCP4728::setPDBits(uint8_t in) {
+    PDbits = in;
+    writePDbitsToDAC();
+}
+
+void MCP4728::initDAC() {
+    I2CWriteBuffer[0] = 0b10001111; // set all channels using internal vref
+    I2CSend(I2CWriteBuffer, 1);
+    setPDBits(0b1000); // not using channel 4
+    I2CWriteBuffer[0] = 0b11001111; // set all channels to have a gain of 2
+    I2CSend(I2CWriteBuffer, 1);
+}
+
+void MCP4728::writeEEPROM() {
+    Wire.beginTransmission(I2C_ADDR);
+    Wire.write(0b01010000);
+    for(uint8_t i = 0; i < 4; ++i) {
+        Wire.write(0b10011111);
+        Wire.write(0xFF);
+    }
+    Wire.endTransmission();
 }
