@@ -26,7 +26,7 @@ public:
     void powerDownChannel(uint8_t chan);
     void powerUpChannel(uint8_t chan);
     void setPDBits(uint8_t in);
-    void writeEEPROM();
+    void writeEEPROM(uint16_t val);
 };
 
 #endif // MCP4728_H

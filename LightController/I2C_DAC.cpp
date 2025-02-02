@@ -11,7 +11,7 @@ void MCP4728::I2CInit() {
 }
 
 uint16_t MCP4728::brightnessToDac(float brightness)  { 
-    return (uint16_t)(4090- brightness * 4090); 
+    return (uint16_t)(brightness * 4090); 
 }
 
 void MCP4728::I2CSend(uint8_t* dataArr, uint8_t len) {
@@ -80,12 +80,12 @@ void MCP4728::initDAC() {
     I2CSend(I2CWriteBuffer, 1);
 }
 
-void MCP4728::writeEEPROM() {
+void MCP4728::writeEEPROM(uint16_t val) {
     Wire.beginTransmission(I2C_ADDR);
-    Wire.write(0b01010000);
+    Wire.write(0b01010000); // EEPROM Write Command for all channels
     for(uint8_t i = 0; i < 4; ++i) {
-        Wire.write(0b10011111);
-        Wire.write(0xFF);
+        Wire.write(((val >> 8) & 0x0F) | 0b10010000);
+        Wire.write(val & 0xFF);
     }
     Wire.endTransmission();
 }
