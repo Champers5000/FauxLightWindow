@@ -53,7 +53,14 @@ void setup() {
   // PORTC.OUT = 0;
   pinMode(PIN_PC1, OUTPUT);
   pinMode(PIN_PC2, OUTPUT);
+  pinMode(PIN_PA4, OUTPUT);
+  pinMode(PIN_PA5, OUTPUT);
+  pinMode(PIN_PA6, OUTPUT);
   delay(2000);
+  digitalWrite(PIN_PA4, OUTPUT);
+  digitalWrite(PIN_PA5, OUTPUT);
+  digitalWrite(PIN_PA6, OUTPUT);
+
   //-------------------------END INIT-------------------------------
 
   // //code to write EEPROM to dac
@@ -69,16 +76,12 @@ void setup() {
   //code to take input uart and put it on all dac channels
   uint16_t allChannels[4] = {0x0F, 0x0F, 0x0F, 0x0F};
   while(true){
-    setLed(0,1);
+    setLed(1,0);
     if(Serial1.available()){
       allChannels[0] = Serial1.parseInt();
         if((allChannels[0] & 0xF000) == 0 && allChannels[0] != 0){
           Serial1.print("set output to ");
           Serial1.println(allChannels[0]);
-          for(uint8_t i = 1; i<3; ++i){
-            allChannels[i] = allChannels[0];
-          }
-          dac.setAllChannels(allChannels);
         }else{
           Serial1.println("invalid input");
           allChannels[0] = allChannels[3];
@@ -86,7 +89,11 @@ void setup() {
     }else{
       Serial1.println(allChannels[0]);
     }
-    setLed(0,0);
+    for(uint8_t i = 1; i<3; ++i){
+      allChannels[i] = allChannels[0];
+    }
+    dac.setAllChannels(allChannels);
+    setLed(0,1);
     delay(500);
   }
 
